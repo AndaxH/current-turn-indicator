@@ -13,6 +13,7 @@ interface IProps {
 
 export const Body: FC<IProps> = ({ roomId }) => {
   const { joined } = useRoomState();
+
   return (
     <div>
       <JoinRoomForm roomId={roomId} />

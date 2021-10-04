@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-socketio-chat-example",
+  "name": "current-turn-indicator",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,12 +13,11 @@
     "clean:ts": "del-cli ./server/**/*.js ./shared/**/*.js",
     "clean:next": "del-cli ./.next",
     "start": "node index.js",
-    "dev": "cross-env NODE_ENV=development APP_ENV=release nodemon",
-    "heroku-postbuild": "npm run build:all"
+    "dev": "cross-env NODE_ENV=development APP_ENV=release nodemon"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arch-inc/nextjs-socketio-chat-example.git"
+    "url": "git+https://github.com/AndaxH/current-turn-indicator"
   },
   "keywords": [
     "next",
@@ -26,15 +25,15 @@
     "next.js",
     "socketio",
     "socket.io",
-    "chat"
+    "game"
   ],
-  "author": "Jun Kato <i@junkato.jp> (https://junkato.jp)",
+  "author": "Andy Hammond",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arch-inc/nextjs-socketio-chat-example/issues"
+    "url": "https://github.com/AndaxH/current-turn-indicator/issues"
   },
-  "homepage": "https://github.com/arch-inc/nextjs-socketio-chat-example#readme",
-  "description": "A simple chat using Socket.io and Next.js, written in pure TypeScript",
+  "homepage": "https://github.com/AndaxH/current-turn-indicator#readme",
+  "description": "A simple turn indicator for games using Socket.io and Next.js, written in pure TypeScript",
   "engines": {
     "node": "12.x"
   },

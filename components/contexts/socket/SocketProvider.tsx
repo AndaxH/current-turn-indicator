@@ -1,4 +1,11 @@
-import { FC, useState, useEffect, useCallback, useContext } from "react";
+import {
+  FC,
+  useState,
+  useEffect,
+  useCallback,
+  useContext,
+  useMemo,
+} from "react";
 import SocketIO, { Socket } from "socket.io-client";
 
 import UserProfileContext from "../profile/UserProfileContext";
@@ -13,8 +20,8 @@ const SocketProvider: FC = ({ children }) => {
   const [socket, setSocket] = useState<typeof Socket>(null);
   const [roomId, setRoomId] = useState<string>(null);
   const myProfile = useContext(UserProfileContext);
-  const [roomMembers, setRoomMembers] = useState<RoomMembersIface>(null);
-  const [textLogs, setTextLogs] = useState<TextIface[]>(null);
+  const [roomMembers, setRoomMembers] = useState<RoomMembersIface>({});
+  const [textLogs, setTextLogs] = useState<TextIface[]>([]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -25,10 +32,6 @@ const SocketProvider: FC = ({ children }) => {
     // connect to Socket.io server
     const s = SocketIO();
     setSocket(s);
-
-    // initialize state
-    setRoomMembers({});
-    setTextLogs([]);
 
     return () => {
       console.log("[unmounted]");

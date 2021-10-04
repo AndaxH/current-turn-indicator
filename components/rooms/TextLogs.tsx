@@ -13,7 +13,7 @@ export const TextLogs: FC = () => {
           color: #999;
         }
       `}</style>
-      <h4>logs</h4>
+      <h4>Chat</h4>
       <ul>
         {Array.isArray(socket?.textLogs) && socket.textLogs.length > 0 ? (
           socket.textLogs.map((t, i) => (
@@ -26,7 +26,7 @@ export const TextLogs: FC = () => {
             </li>
           ))
         ) : (
-          <li>no text logs found</li>
+          <li>No chat yet</li>
         )}
       </ul>
     </section>
